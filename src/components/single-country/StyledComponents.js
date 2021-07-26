@@ -95,7 +95,7 @@ export const CountryContentContainer = styled.div`
       width: 100%;
     }
 
-    .details {
+    #details {
       padding: 0;
 
       #name {
@@ -116,7 +116,8 @@ export const CountryContentContainer = styled.div`
     #flag {
       margin-bottom: 30px;
     }
-    .details {
+
+    #details {
       #columns-container {
         flex-direction: column;
       }
