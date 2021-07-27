@@ -15,6 +15,7 @@ const SearchInput = ({ updateSearchInput }) => {
       <StyledInput
         id='search-input'
         placeholder='Search for a country...'
+        aria-label='Search for a country'
         onChange={ev => updateSearchInput(ev.target.value)}
       />
     </SearchInputContainer>

@@ -8,7 +8,7 @@ const REGION_OPTIONS = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
 const FilterDropDownMenu = ({ updateSelectInput }) => {
   return (
-    <DropDownContainer id='drop-down-container'>
+    <DropDownContainer id='drop-down-container' aria-label='filter by region'>
       <Dropdown
         id='drop-down-menu'
         controlClassName='ddm-control'

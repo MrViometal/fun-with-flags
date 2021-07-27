@@ -6,27 +6,28 @@ const CountryCard = ({ country }) => {
   const history = useHistory();
   return (
     <Card
+      aria-label={`${country.name}`}
       onClick={() => {
         history.push(`/${country?.alpha3Code}`);
       }}
     >
       <CountryFlag id='country-flag' src={country?.flag} />
       <CountryDetails id='country-details'>
-        <p id='country-name' className='country-name'>
+        <p id='country-name' className='country-name' aria-label='name'>
           {country?.name}
         </p>
 
-        <p id='population' className='population'>
+        <p id='population' className='population' aria-label='population'>
           <span className='title'>Population: </span>
           {country?.population?.toLocaleString()}
         </p>
 
-        <p id='region' className='region'>
+        <p id='region' className='region' aria-label='region'>
           <span className='title'>Region: </span>
           {country?.region}
         </p>
 
-        <p id='capital' className='capital'>
+        <p id='capital' className='capital' aria-label='capital'>
           <span className='title'>Capital: </span>
           {country?.capital}
         </p>
