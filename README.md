@@ -1,67 +1,149 @@
 # Zyda Frontend Test - REST Countries API with color theme switcher
 
-![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [REST Countries API with color theme switcher task](https://github.com/zydalabs/FrontEnd-Test). Zyda Frontend Task helps us test your coding skills by building a realistic project.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding task.
+- [Zyda Frontend Test - REST Countries API with color theme switcher](#zyda-frontend-test---rest-countries-api-with-color-theme-switcher)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The task](#the-task)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+  - [Acknowledgments](#acknowledgments)
 
-**To do this task, you need a good understanding of JavaScript.**
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-## The challenge
+## Overview
 
-Your challenge is to integrate with the [REST Countries API](https://restcountries.eu) to pull country data and display it like in the designs.
+This is an application for viewing, searching, and filtering countries cards with flags and few details, when a card is clicked, the user is redirected to another page with more details for the corresponding country's details.
 
-Please use [React](https://reactjs.org) JavaScript framework/library or [Next.js](https://nextjs.org/) React framework. You also have complete control over which packages you use to do things like make HTTP requests or style your project.
+A file structure was devised to encapsulate different components in their own folder inside the src folder and it goes as follows:
 
-Your users should be able to:
+| folder     | description                                                                                                                                                                                                                          |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| components | a folder with separate folders for different components, each folder containing a file with the component and its logic and a file `StyledComponents.js` for the styled components used to render the styles for this component      |
+| ---        | ---                                                                                                                                                                                                                                  |
+| constants  | a folder with files for constants, containing 2 files for `styling variables` constants and `localStorage` constants                                                                                                                 |
+| ---        | ---                                                                                                                                                                                                                                  |
+| hooks      | a folder for hooks used throughout the project, currently holding a single file for the themeContext                                                                                                                                 |
+| ---        | ---                                                                                                                                                                                                                                  |
+| pages      | a folder with files for the different pages (currently only 2: `HomePage`, and `CountryDetails` )                                                                                                                                    |
+| ---        | ---                                                                                                                                                                                                                                  |
+| services   | a folder for different services used for requests, containing a file for the functions returning the `endpoints` used, and files for the different functions used to send the `request` and receive and parse the `response`         |
+| ---        | ---                                                                                                                                                                                                                                  |
+| styles     | a folder with files for the theme rules and the `globalStyles`                                                                                                                                                                       |
+| ---        | ---                                                                                                                                                                                                                                  |
+| svgs       | a folder for the svgs used in the project                                                                                                                                                                                            |
+| ---        | ---                                                                                                                                                                                                                                  |
+| utilities  | a folder for pure functions used to handle a certain logic in order to be used in different sections throughout the project, the separation is an attempt to `encapsulate` and `reuse` logic for a cleaner structure and reusability |
+
+### The task
+
+Users should be able to:
 
 - See all countries from the API on the homepage
 - Search for a country using an `input` field
 - Filter countries by region
-- Click on a country to see more detailed information on a separate page (Country details page)
+- Click on a country to see more detailed information on a separate page
 - Click back button to return to countries page from the details page
 - Toggle the color scheme between light and dark mode _(optional)_
 
-## Where to find everything
+### Links
 
-Your task is to build out the project to the designs inside the `/design` folder.
+- Solution URL: [Add solution URL here](https://github.com/MrViometal/FrontEndTask)
+- Live Site URL: [Add live site URL here](https://fun-with-flags-adawy.vercel.app/)
 
-In this task, you will find mobile and desktop designs in light and dark mode color schemes for both pages.
+## My process
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`.
+My process was both structured and not so structured at the same time.
 
-There are no assets for this task, as the country flags will be pulled from the [REST Countries API](https://restcountries.eu) and you can use an icon font library for the icons.
+At first, I have:
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- reviewed the designs
+- thought about the the structure of having two pages
+- what each page contains as html (or JSX if you will) elements
+- what libraries to use
+- what styling convention to use
 
-## Building your project
+Then I decided to use styled-components as they offer a clean and a controlled way to handle the theme toggle, despite its draw backs, but I tackled it with a hybrid mode -if you will- by styling some components with styled components, and styling the children elements of that parent with normal css id and class selectors (not opting for inline styles as I find them really messy and irreusable).
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+I first went with developing the header and the theme button, then worked on the theme toggling and saving the theme in localStorage to remember the user's preference for a better experience, once I was happy with that, I believe I created the homepage component and worked on the countries cards container and the single cards styles, this of course required fetching the countries through the API provided, not worrying so much about the file structure at this point I did that within the same component, with the intention of a refactor in the future.
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/) by forking this repo. Creating a repo will make it easier to share your code with us.
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a task as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+After that I went with developing the router and the country's details page and its components, and it was time for a quick rearranging of files and components in order to make my life a bit easier :D. Also wiring the navigation and some refactors.
 
-## Deploying your project
+Following that, it was time to worry about the mobile view as all of the above stages I was focusing on building the functionality and the skeleton of the app. And then, it was time to worry about the search and filter components in the homepage, I tried to use the native select tag for the filter component, then opted to use a small library `react-dropdown` cause it offered the functionality needed and saved me time worrying about the styling logic, I chose this library as it doesn't introduce a major performance issue and is dedicated to this component only, in a different scenario I might have chose Material UI or Ant Design, or any other UI library, but in our case, it would have been an overkill.
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+And then, it was time to rethink how to get the country's details, at first I went with getting them by name, but I realized the borders array is in alpha3Code and not name, this required getting countries by code to get their names, so in order to use as few endpoints as possible to get the job done, I changed getting the countries by name, to getting them by code. Then I styled this section as I didn't worry about it before then.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+At last, I worked on the search and filter functionalities, worrying about their logic and different scenarios of searching for a country by name through the `input` element while also filtering them with the `select` element, after wiring them up correctly as best as I could think (as it wasn't specified what the desired experience was so I took a shot at the best and most intuitive and user friendly experience in my opinion), I went through the whole project, cleaning it up and making sure everything is in its right place and that the conventions I devised are followed everywhere, to the best of my abilities of course.
 
-You can host your site using one of these solutions or any other trusted provider.
+_IMPORTANT NOTE_: I know you specified the mobile view's break point to be 375px, however I changed it to 420px to accommodate fot the modern mobile phone's viewports as they are bigger than that. Hope that was not a bad move on my side. :D
 
-## Create a custom `README.md`
+### Built with
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+- Semantic HTML5 markup
+- Flexbox
+- CSS Grid
+- [History](https://www.npmjs.com/package/history) - JS library
+- [React](https://reactjs.org/) - JS library
+- [React DropDown](https://www.npmjs.com/package/react-dropdown) - JS library
+- [React Router](https://reactrouter.com/) - JS library
+- [Styled Components](https://styled-components.com/) - For styles
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+### What I learned
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+I have implemented theme toggling logic in only a few applications I have built, and I have done so in the past in many different ways with css or saas but it was the first time to implement it with `styled-components` and it was a lot of fun to be honest. :D
 
-**Have fun building!** 🚀
+For this reason, I guess I am most proud of this are in the project, here is a snippet of the `ThemeToggleButton` component that is responsible for handling the logic.
+
+```js
+const ThemeToggleButton = ({ updateTheme }) => {
+  const { isLightTheme } = useTheme();
+
+  const themeToggle = () => {
+    if (isLightTheme) {
+      updateTheme('dark');
+      setThemeInLocalStorage('dark');
+    } else {
+      updateTheme('light');
+      setThemeInLocalStorage('light');
+    }
+  };
+
+  const themeIcon = (
+    <img
+      id='theme-icon'
+      alt='light-dark-mode-icon'
+      src={isLightTheme ? moon : sun}
+    />
+  );
+
+  const themeName = `${isLightTheme ? 'Dark' : 'Light'} Mode`;
+
+  return (
+    <Button className='element' onClick={themeToggle}>
+      {themeIcon}
+      {themeName}
+    </Button>
+  );
+};
+```
+
+### Continued development
+
+I believe I would choose going with the mobile first approach in the future rather than desktop first, I believe I will focus on that and try to research the best ways to do it.
+
+### Useful resources
+
+Mainly w3schools and styled-components documentation.
+
+- [Openbase](https://openbase.com/) - This website helped me compare different dropdown JS libraries
+
+## Acknowledgments
+
+A shout out to the Opensource community and tech youtubers. Also thanks "Med" and/or whoever worked on this task initial repo and the thorough README and README-template files.
