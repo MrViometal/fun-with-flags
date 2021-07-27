@@ -1,6 +1,3 @@
-import { createGlobalStyle } from 'styled-components';
-import { transitionDelay } from '../constants/stylingVariables';
-
 const lightTheme = {
   name: 'light',
   bodyBackground: '#fafafa',
@@ -19,11 +16,4 @@ const darkTheme = {
   shadow: '#171918'
 };
 
-const GlobalStyles = createGlobalStyle`
-body {
-    background-color: ${props => props.theme.bodyBackground};
-    transition: background-color ${transitionDelay};
-    margin: 0;
-}`;
-
-export { lightTheme, darkTheme, GlobalStyles };
+export { lightTheme, darkTheme };

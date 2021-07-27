@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 import { transitionDelay } from '../constants/stylingVariables';
+import { createGlobalStyle } from 'styled-components';
 
+const GlobalStyles = createGlobalStyle`
+body {
+    background-color: ${props => props.theme.bodyBackground};
+    transition: background-color ${transitionDelay};
+    margin: 0;
+}`;
 const GlobalAppWrapper = styled.div`
   * {
     font-family: 'Nunito Sans', sans-serif;
@@ -10,4 +17,4 @@ const GlobalAppWrapper = styled.div`
   }
 `;
 
-export { GlobalAppWrapper };
+export { GlobalAppWrapper, GlobalStyles };
