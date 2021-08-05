@@ -1,22 +1,15 @@
-# Zyda Frontend Test - REST Countries API with color theme switcher
-
-This is a solution to the [REST Countries API with color theme switcher task](https://github.com/zydalabs/FrontEnd-Test). Zyda Frontend Task helps us test your coding skills by building a realistic project.
-
 ## Table of contents
 
-- [Zyda Frontend Test - REST Countries API with color theme switcher](#zyda-frontend-test---rest-countries-api-with-color-theme-switcher)
-  - [Table of contents](#table-of-contents)
-  - [Overview](#overview)
-    - [The task](#the-task)
-    - [Links](#links)
-  - [My process](#my-process)
-    - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
-    - [Continued development](#continued-development)
-    - [Useful resources](#useful-resources)
-  - [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+- [Table of contents](#table-of-contents)
+- [Overview](#overview)
+  - [The task](#the-task)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -55,7 +48,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/MrViometal/FrontEndTask)
+- Solution URL: [Add solution URL here](https://github.com/MrViometal/fun-with-flags)
 - Live Site URL: [Add live site URL here](https://fun-with-flags-adawy.vercel.app/)
 
 ## My process
